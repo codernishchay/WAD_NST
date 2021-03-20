@@ -14,7 +14,7 @@ body{
     /* background-color: rgb(232, 240, 225); */
     background-image: url("website_background.jpg");
 	background-position: centre;
-	background-size: cover;
+	background-size:cover;
 	/* background-repeat: repeat; */
 	/* background-attachment: fixed; */
 }
@@ -86,8 +86,8 @@ header {
 }
 
 .imgtext {
-	position: relative;
-	top:20%;
+	position: absolute;
+	top:10%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
@@ -100,7 +100,8 @@ header {
 .bar {
 	width: 1110px;
 	background-color: rgb(88,91,126);
-	background-image: linear-gradient(to right, rgb(88,91,126), black);
+	background-image: linear-gradient(to right, rgb(87, 77, 72), rgb(231, 180, 151));
+	border-radius: 12px;
 	/* border: 10px solid 	rgb(255,99,71); */
 	/* padding: 50px; */
 	/* margin: 20px; */
@@ -118,7 +119,8 @@ header {
 }
 
 .inlogin{
-	background-color: rgb(110, 78, 40);
+	background-color: rgb(126, 108, 110);
+	border-radius: 25px;
 	padding: 20px 30px;
 }
 
