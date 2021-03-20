@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div style="margin-top: 100px;">
+<div class="logindiv">
 
 
     <div class="container login inlogin">
         <h2 class="error_login">{{ error }}</h2>
-        <h2>Login</h2>
+        <h1 class="h2text">Login</h1>
 
         <form method="POST">
             {% csrf_token %}

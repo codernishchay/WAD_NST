@@ -12,7 +12,9 @@
 
 body{
     /* background-color: rgb(232, 240, 225); */
-    background-image: url('https://www.desicomments.com/wp-content/uploads/2017/02/Autumn-Image.jpg');
+    background-image: url("website_background.jpg");
+	background-position: centre;
+	background-size: cover;
 	/* background-repeat: repeat; */
 	/* background-attachment: fixed; */
 }
@@ -25,6 +27,9 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
+.h2text{
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 /* .wrapper {
 	width: 1170px;
 	margin: auto;
@@ -81,7 +86,7 @@ header {
 }
 
 .imgtext {
-	position: absolute;
+	position: relative;
 	top:20%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -113,7 +118,16 @@ header {
 }
 
 .inlogin{
+	background-color: rgb(110, 78, 40);
 	padding: 20px 30px;
+}
+
+.logindiv{
+	position:relative;
+	top: 90px;
+	width: 85%;
+	padding: 10px;
+	margin:auto;
 }
 
 .error_login{
