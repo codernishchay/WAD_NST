@@ -8,9 +8,17 @@
     {% load static %}
     <title>Neuresta - Gallery</title>
     <link rel="stylesheet" href="{%static 'gallery.css'%}">
+    <link rel="stylesheet" href="{%static 'navbar1.css'%}">
 </head>
 
 <body>
+    <ul class="menu-bar">
+        <li>Home</li>
+        <li>About</li>
+        <li>Gallery</li>
+        <li>Login</li>
+        <li>SignUp</li>
+    </ul>
     <div class="container">
         <div class="box">
             <img src='{% static "home_images/tiger.jpeg" %}'>
