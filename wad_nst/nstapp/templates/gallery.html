@@ -13,13 +13,29 @@
 
 <body>
     <div>
-        <div>
+        <div class="navigation">
             <ul class="menu-bar">
-                <li>Home</li>
-                <li>About</li>
-                <li>Gallery</li>
-                <li>Login</li>
-                <li>SignUp</li>
+                <li>
+                    <a class = "nav" href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a class = "nav"  href="{% url 'about' %}">About</a>
+                </li>
+                <li>
+                    <a class = "nav" href="{% url 'gallery' %}">Gallery</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a class = "nav" href="{% url 'logoutuser' %}">Logout</a>
+                </li>
+                {% else %}
+                <li>
+                    <a class = "nav" href="{% url 'loginuser' %}">Login</a>
+                </li>
+                <li>
+                    <a class = "nav" href="{% url 'signupuser' %}">SignUp</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
         <div class="container">

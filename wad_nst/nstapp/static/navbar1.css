@@ -1,5 +1,4 @@
-body {
-    height: 100vh;
+.navbody {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -11,8 +10,8 @@ body {
     background-color: rgba(39, 39, 39, 0.258);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    align-items: center;
-    padding: 5px 650px;
+    text-align: center;
+    padding: 0;
     margin: 0px 0 0 0;
 }
 .menu-bar li {
@@ -44,4 +43,18 @@ body {
     background: linear-gradient(to bottom, #dfe4e4, #e2e2e2);
     box-shadow: 0px 3px 20px 0px black;
     transform: scale(1.2);
+}
+
+.nav{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+.navigation{
+    position: absolute;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    text-align: center;
 }

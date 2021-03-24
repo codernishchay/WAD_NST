@@ -21,9 +21,36 @@
 
     <!-- Custom Style-->
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar1.css' %}">
 </head>
 
 <body style="background-color: rgb(73, 73, 233);">
+   <div>
+    <div class="navbody">
+        <ul class="menu-bar">
+            <li>
+                <a class = "nav" href="{% url 'home' %}">Home</a>
+            </li>
+            <li>
+                <a class = "nav"  href="{% url 'about' %}">About</a>
+            </li>
+            <li>
+                <a class = "nav" href="{% url 'gallery' %}">Gallery</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a class = "nav" href="{% url 'logoutuser' %}">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a class = "nav" href="{% url 'loginuser' %}">Login</a>
+            </li>
+            <li>
+                <a class = "nav" href="{% url 'signupuser' %}">SignUp</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
       <div class="container">
         <div class="panel">
             <div class="row">
@@ -89,6 +116,7 @@
             });
         });
     </script>
+    </div>
 </body>
 
 </html>
