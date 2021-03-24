@@ -8,6 +8,7 @@
     {% load static %}
     <title>Neuresta - About</title>
     <link rel="stylesheet" href="{%static 'about_page.css'%}">
+    <link rel="stylesheet" href="{%static 'navbar1.css'%}">
 
 </head>
 
@@ -16,47 +17,32 @@
 
    <!-- LOGO AND MENU -->
 
-   <header id="header">
-    <div class="wrapper">
-        <a href="#">
-                <img src="https://t3.ftcdn.net/jpg/04/06/91/62/360_F_406916265_hxmrv7wgw9SZN9871yebxQJAX7HsHdNp.jpg" alt="logo">
-        </a>
+   <div class="navbody">
+    <ul class="menu-bar">
+        <li>
+            <a class = "nav" href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a class = "nav"  href="{% url 'about' %}">About</a>
+        </li>
+        <li>
+            <a class = "nav" href="{% url 'gallery' %}">Gallery</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li>
+            <a class = "nav" href="{% url 'logoutuser' %}">Logout</a>
+        </li>
+        {% else %}
+        <li>
+            <a class = "nav" href="{% url 'loginuser' %}">Login</a>
+        </li>
+        <li>
+            <a class = "nav" href="{% url 'signupuser' %}">SignUp</a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
 
-
-
-
-    <!-- MENU LINKS ON TOP -->
-
-        <ul class="menu-left">
-            <li>
-                <a href="#">How we function?</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Pricing</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-        <ul class="menu-right">
-            <li class="menu-cta">
-                <a href="#">
-                    Get Started
-                </a>
-            </li>
-        </ul>
-    </div>
-</header>
-
-
-<!-- LOGO AND MENU END -->
-
-
-
-<!-- INTRO PAGE -->
 
 
 <section id="intro">
