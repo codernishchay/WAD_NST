@@ -243,3 +243,10 @@ a img:last-child {
     /* border: 4.5px solid #327800 ; */
     /* margin: 0%; */
 }
+
+
+#footer{
+    padding: 4% 15%;
+    text-align: center;
+    color: grey;
+}
