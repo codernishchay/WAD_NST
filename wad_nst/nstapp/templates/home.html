@@ -23,38 +23,38 @@
     crossorigin="anonymous"></script>
   <!--Css style file-->
   <link rel="stylesheet" href="{% static 'homestyles.css' %}">
-     <link rel="stylesheet" href="{%static 'navbar1.css'%}">
+  <link rel="stylesheet" href="{%static 'navbar1.css'%}">
   <!--Font awesome -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.js"></script>
 </head>
 
 <body>
- 
-   <div class="navbody">
+
+  <div class="navbody">
     <ul class="menu-bar">
-        <li>
-            <a class = "nav" href="{% url 'home' %}">Home</a>
-        </li>
-        <li>
-            <a class = "nav"  href="{% url 'about' %}">About</a>
-        </li>
-        <li>
-            <a class = "nav" href="{% url 'gallery' %}">Gallery</a>
-        </li>
-        {% if user.is_authenticated %}
-        <li>
-            <a class = "nav" href="{% url 'logoutuser' %}">Logout</a>
-        </li>
-        {% else %}
-        <li>
-            <a class = "nav" href="{% url 'loginuser' %}">Login</a>
-        </li>
-        <li>
-            <a class = "nav" href="{% url 'signupuser' %}">SignUp</a>
-        </li>
-        {% endif %}
+      <li>
+        <a class="nav" href="{% url 'home' %}">Home</a>
+      </li>
+      <li>
+        <a class="nav" href="{% url 'about' %}">About</a>
+      </li>
+      <li>
+        <a class="nav" href="{% url 'gallery' %}">Gallery</a>
+      </li>
+      {% if user.is_authenticated %}
+      <li>
+        <a class="nav" href="{% url 'logoutuser' %}">Logout</a>
+      </li>
+      {% else %}
+      <li>
+        <a class="nav" href="{% url 'loginuser' %}">Login</a>
+      </li>
+      <li>
+        <a class="nav" href="{% url 'signupuser' %}">SignUp</a>
+      </li>
+      {% endif %}
     </ul>
-</div>
+  </div>
 
   <section id="title">
     <div class="container-fluid">
@@ -217,9 +217,9 @@
           <div class="face face2">
             <div class="content">
               <h3>
-                <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank">_adamdipinto</a>
+                <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank">Content Image</a>
               </h3>
-              <p>This is where I network and build my professional protfolio.</p>
+              <p>The content image is the base image on which you apply NST.</p>
             </div>
           </div>
         </div>
@@ -234,9 +234,9 @@
           <div class="face face2">
             <div class="content">
               <h3>
-                <a href="https://twitter.com/AdamDipinto" target="_blank">@AdamDipinto</a>
+                <a href="https://twitter.com/AdamDipinto" target="_blank">Stylized Image</a>
               </h3>
-              <p>This is where I read news and network with different social groups.</p>
+              <p>This is the final output image stylized to look like the style image.</p>
             </div>
           </div>
         </div>
@@ -251,9 +251,9 @@
           <div class="face face2">
             <div class="content">
               <h3>
-                <a href="" target="_blank">atom888</a>
+                <a href="" target="_blank">Style/Abstract image</a>
               </h3>
-              <p>This is where I share code and work on projects.</p>
+              <p>This is the style image or the abstract image.</p>
             </div>
           </div>
         </div>
