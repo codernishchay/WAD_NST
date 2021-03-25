@@ -28,57 +28,70 @@
 </head>
 
 <body>
-  <div class ="topNavbar">
+  <div class="topNavbar">
 
-  
 
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="">NST</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#footer">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pricing">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#cta">Your Images</a>
-            </li>
-          </ul>
-      </nav> </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="">NST</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pricing">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cta">Your Images</a>
+          </li>
+        </ul>
+    </nav>
+  </div>
   <section id="title">
     <div class="container-fluid">
-      
-   
+
+
 
       <!-- Title -->
       <div class="row">
         <div class="col-lg-6">
-        <h1 > Add some text here - shreyas<h1>
- 
+          <h2> Neuresta - Neural style transfer for dummies</h2>
+          <h1>
+            <p>
+              Everyone has those pictures that just seem so perfect,
+              what if I told you you can stylize these images?
+              <br>
+              With Neuresta, all you have to do is input one content image (ex: a picture of you)
+              and one style image (ex: a pattern you like).
+              <br>
+              Boom! now you have a new picture of you
+              styled with that pattern.
+            </p>
+          </h1>
+
           <button type="button" class="btn btn-secondary btn-lg download-button"><i class="fab fa-apple"></i>
             Try now</button>
-          <button type="button" class="btn btn-lg btn-outline-light download-button"><i class="fab fa-google-play"></i>
-            Share it with your friends</button>
-          </div>
+          <!-- <button type="button" class="btn btn-lg btn-outline-light download-button"><i class="fab fa-google-play"></i>
+            Share it with your friends</button> -->
+        </div>
         <div class="col-lg-6">
 
           <a>
 
-            <img src="{% static 'home_images/einstein.jpg'%}" width="700px" height="640" class=""/> 
-            <img src="{% static 'home_images/einstein_style.png' %}" width="750px" height ="640px" class=""/>
-      
+            <img src="{% static 'gallery_images/panda.jpg'%}" width="768" height="500" class="" />
+            <img src="{% static 'gallery_images/panda_style.png' %}" width="768" height="500" class="" />
+
           </a>
-       
+
+        </div>
       </div>
-    </div>
   </section>
-  <div class = "division2"></div>
+  <div class="division2"></div>
 
 
   <!-- Features -->
@@ -97,7 +110,7 @@
       </div>
       <div class="features-data col-lg-4 ">
         <i class="fas fa-heart fa-4x icon"></i>
-        <h3>Mix you Images, Have fun</h3>
+        <h3>Style you Images, Have fun</h3>
         <p>Play with images, Share with your friends, Enjoy!</p>
       </div>
     </div>
@@ -107,31 +120,31 @@
   </section>
 
 
-</section>
-<section id="cta">
-    
+  </section>
+  <section id="cta">
+
 
     <div class="row">
 
-        <div class="column">
+      <div class="column">
 
-          <a>
+        <a>
 
-            <img src="{% static 'home_images/einstein.jpg'%}" width="410px" class="rounded-corners"/> 
-            <img src="{% static 'home_images/einstein_style.png'%}" width="410px"  class="rounded-corners"/>
-      
-          </a>
-        </div>
+          <img src="{% static 'gallery_images/einstein.jpg'%}" width="410px" class="rounded-corners" />
+          <img src="{% static 'gallery_images/einstein_style.png'%}" width="410px" class="rounded-corners" />
 
-        <div class="column">
+        </a>
+      </div>
 
-          <a>
-            <img src="{% static 'home_images/tiger.jpeg'%}" width="410px"  class="rounded-corners"/> 
-            <img src="{% static 'home_images/tiger_stylized.png'%}" width="410px" class="rounded-corners"/>
-          </a>
-        </div>
+      <div class="column">
 
-        </div>
+        <a>
+          <img src="{% static 'gallery_images/tiger.jpeg'%}" width="410px" class="rounded-corners" />
+          <img src="{% static 'gallery_images/tiger_stylized.png'%}" width="410px" class="rounded-corners" />
+        </a>
+      </div>
+
+    </div>
 
     </div>
 
@@ -143,47 +156,47 @@
 
         <a>
 
-          <img src="{% static 'home_images/panda.jpg'%}" width="410px" class="rounded-corners"/> 
-          <img src="{% static 'home_images/panda_style.png'%}" width="410px" class="rounded-corners"/>
-    
+          <img src="{% static 'gallery_images/panda.jpg'%}" width="410px" class="rounded-corners" />
+          <img src="{% static 'gallery_images/panda_style.png'%}" width="410px" class="rounded-corners" />
+
         </a>
       </div>
 
       <div class="column">
 
         <a>
-          <img src="{% static 'home_images/woman.jpg'%}" width="410px" class="rounded-corners"/> 
-          <img src="{% static 'home_images/woman_style.png'%}" width="410px" class="rounded-corners"/>
+          <img src="{% static 'gallery_images/woman.jpg'%}" width="410px" class="rounded-corners" />
+          <img src="{% static 'gallery_images/woman_style.png'%}" width="410px" class="rounded-corners" />
         </a>
       </div>
 
-      </div>
-
-  </div>
-
-  </section>
-
-
-
- <section id="cta">
-
-  <h3 class="cta-last">SignUp and Share your Styles</h3>
-  <button type="button" class="btn btn-secondary btn-lg download-button2"><i class="fab fa-apple"></i>
-    SignUp</button>
-  <button type="button" class="btn btn-lg btn-outline-light download-button2"><i class="fab fa-google-play"></i>
-    Share</button>
-
-</section> 
-
-
-  <section id="press">
-    <div class = "_press">
-    <img class="press-image" src="{% static 'TechCrunch.png' %}" alt="tc-logo">
-    <img class="press-image" src="{% static 'tnw.png' %}" alt="tnw-logo">
-    <img class="press-image" src="{% static 'bizinsider.png' %}" alt="biz-insider-logo">
-    <img class="press-image" src="{% static 'mashable.png' %}" alt="mashable-logo">
     </div>
+
+    </div>
+
   </section>
+
+
+
+  <section id="cta">
+
+    <h3 class="cta-last">SignUp and Share your Styles</h3>
+    <button type="button" class="btn btn-secondary btn-lg download-button2"><i class="fab fa-apple"></i>
+      SignUp</button>
+    <button type="button" class="btn btn-lg btn-outline-light download-button2"><i class="fab fa-google-play"></i>
+      Share</button>
+
+  </section>
+
+
+  <!-- <section id="press">
+    <div class="_press">
+      <img class="press-image" src="{% static 'TechCrunch.png' %}" alt="tc-logo">
+      <img class="press-image" src="{% static 'tnw.png' %}" alt="tnw-logo">
+      <img class="press-image" src="{% static 'bizinsider.png' %}" alt="biz-insider-logo">
+      <img class="press-image" src="{% static 'mashable.png' %}" alt="mashable-logo">
+    </div>
+  </section> -->
 
 
   <!-- Pricing -->
@@ -192,80 +205,82 @@
 
 
     <head>
-    
+
       <link rel="stylesheet" type="text/css" media="screen" href="{% static 'card.css' %}" />
-      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-          crossorigin="anonymous">
-  </head>
-  
-  <div>
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+
+    <div>
       <div class="container">
-          <div class="card">
-              <div class="face face1">
-                  <div class="content">
-                      <div class="icon">
-                          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                      </div>
-                  </div>
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <div class="icon">
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
               </div>
-              <div class="face face2">
-                  <div class="content">
-                      <h3>
-                          <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank">_adamdipinto</a>
-                      </h3>
-                      <p>This is where I network and build my professional protfolio.</p>
-                  </div>
-              </div>
+            </div>
           </div>
-          <div class="card">
-              <div class="face face1">
-                  <div class="content">
-                      <div class="icon">
-                          <i class="fa fa-twitter-square" aria-hidden="true"></i>
-                      </div>
-                  </div>
-              </div>
-              <div class="face face2">
-                  <div class="content">
-                      <h3>
-                          <a href="https://twitter.com/AdamDipinto" target="_blank">@AdamDipinto</a>
-                      </h3>
-                      <p>This is where I read news and network with different social groups.</p>
-                  </div>
-              </div>
+          <div class="face face2">
+            <div class="content">
+              <h3>
+                <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank">_adamdipinto</a>
+              </h3>
+              <p>This is where I network and build my professional protfolio.</p>
+            </div>
           </div>
-          <div class="card">
-              <div class="face face1">
-                  <div class="content">
-                      <div class="icon">
-                          <i class="fa fa-github-square" aria-hidden="true"></i>
-                      </div>
-                  </div>
+        </div>
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <div class="icon">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
               </div>
-              <div class="face face2">
-                  <div class="content">
-                      <h3>
-                          <a href="" target="_blank">atom888</a>
-                      </h3>
-                      <p>This is where I share code and work on projects.</p>
-                  </div>
-              </div>
+            </div>
           </div>
+          <div class="face face2">
+            <div class="content">
+              <h3>
+                <a href="https://twitter.com/AdamDipinto" target="_blank">@AdamDipinto</a>
+              </h3>
+              <p>This is where I read news and network with different social groups.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <div class="icon">
+                <i class="fa fa-github-square" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <h3>
+                <a href="" target="_blank">atom888</a>
+              </h3>
+              <p>This is where I share code and work on projects.</p>
+            </div>
+          </div>
+        </div>
 
       </div>
-  </div>
+    </div>
   </section>
   <section id="testimonials">
 
     <div id="testimonial-slide" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <h2 style="color: white;">I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
+          <h2 style="color: white;">I no longer have to sniff other dogs for love. I've found the hottest Corgi on
+            TinDog. Woof.</h2>
           <img class="testimonials-image" src="{% static 'dog-img.jpg' %}" alt="dog-profile">
           <em style="color: white;">Pebbles, New York</em>
         </div>
         <div class="carousel-item">
-          <h2 class="testimonial-text" style="color: white;">My dog used to be so lonely, but with TinDog's help, they've found the love of
+          <h2 class="testimonial-text" style="color: white;">My dog used to be so lonely, but with TinDog's help,
+            they've found the love of
             their life. I think.</h2>
           <img class="testimonials-image" src="{% static 'lady-img.jpg' %}" alt="lady-profile">
           <em style="color: white;">Beverly, Illinois</em>
@@ -278,8 +293,8 @@
 
         </a>
       </div>
-      </div>
-      </section>
+    </div>
+  </section>
 
   <footer id="footer">
 
@@ -289,6 +304,5 @@
 
 
 </body>
+
 </html>
-
-
