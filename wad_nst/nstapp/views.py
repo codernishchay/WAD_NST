@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.shortcuts import redirect, render
+from django.core.files.storage import FileSystemStorage
 
 
 def home(request):
@@ -68,3 +69,15 @@ def loginuser(request):
         else:
             login(request, user)
             return redirect("home")
+def upload(request):
+    context = {}
+    if request.method == "POST":
+        uploded_file =request.FILES['image']
+        fs = FileSystemStorage()
+        fs.save(uploded_file.name, uploded_file)
+        name = fs.save(uploded_file.name, uploded_file)
+        url = fs.url(name)
+        context['url'] = fs.url(name)
+        print(url)
+        print(uploded_file.size)
+    return render(request, "upload.html")
