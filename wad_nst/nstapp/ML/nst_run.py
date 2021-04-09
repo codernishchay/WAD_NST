@@ -66,7 +66,7 @@ def run_style_transfer(
 
 
 def run(contentpath, stylepath, savepath):
-    loader = ImageLoader(contentpath=contentpath, stylepath=stylepath, savepath=savepath)
+    loader = ImageLoader(contentpath=contentpath, stylepath=stylepath)
 
     content_img, style_img = loader.open_images()
     input_img = content_img.clone()
@@ -79,3 +79,5 @@ def run(contentpath, stylepath, savepath):
         style_img=style_img,
         input_img=input_img,
     )
+
+    img = img.save(savepath)
