@@ -2,11 +2,10 @@ from . import *
 
 
 class ImageLoader:
-    def __init__(self, contentpath, stylepath, finalpath):
+    def __init__(self, contentpath, stylepath):
 
         self.stylepath = stylepath
         self.contentpath = contentpath
-        self.finalpath = finalpath
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.imsize = 512 if torch.cuda.is_available() else 128  # use small size if no gpu
