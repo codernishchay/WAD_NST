@@ -8,6 +8,6 @@ class Unloader:
     def pil_img(self, tensor):
         image = tensor.cpu().clone()
         image = image.squeeze(0)  # remove the fake batch dimension
-        image = unloader(image)
+        image = self.unloader(image)
 
         return image

@@ -1,7 +1,7 @@
+from nstapp.ML import *
 from nstapp.ML.img_loader import ImageLoader
+from nstapp.ML.img_unloader import Unloader
 from nstapp.ML.nst import get_input_optimizer, get_style_model_and_losses
-
-from . import *
 
 
 def run_style_transfer(
@@ -80,4 +80,13 @@ def run(contentpath, stylepath, savepath):
         input_img=input_img,
     )
 
-    img = img.save(savepath)
+    pil_img = Unloader().pil_img(img)
+    pil_img.save(savepath)
+
+
+if __name__ == "__main__":
+    run(
+        "/Users/shreyasms/1.Data/2.College_new/Assignments/Sem4/WAD/Project/WAD_NST/wad_nst/nstapp/static/gallery_images/woman.jpg",
+        "/Users/shreyasms/1.Data/2.College_new/Assignments/Sem4/WAD/Project/WAD_NST/wad_nst/nstapp/static/gallery_images/abstract_woman.jpg",
+        "/Users/shreyasms/Desktop/picture.jpg",
+    )

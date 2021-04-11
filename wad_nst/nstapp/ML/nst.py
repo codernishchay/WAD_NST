@@ -21,16 +21,16 @@ class StyleLoss(nn.Module):
 
     def __init__(self, target_feature):
         super(StyleLoss, self).__init__()
-        self.target = gram_matrix(target_feature).detach()
+        self.target = self.gram_matrix(target_feature).detach()
 
     def forward(self, input):
-        G = gram_matrix(input)
+        G = self.gram_matrix(input)
         self.loss = F.mse_loss(G, self.target)
         return input
 
 
 class Normalization(nn.Module):
-    def __init__(self):
+    def __init__(self, mean, std):
         super(Normalization, self).__init__()
         self.mean = torch.tensor(mean).view(-1, 1, 1)
         self.std = torch.tensor(std).view(-1, 1, 1)
