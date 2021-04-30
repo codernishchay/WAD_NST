@@ -1,9 +1,20 @@
+import os
+import sys
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
+from django.core.files.storage import FileSystemStorage
 from django.db import IntegrityError
 from django.shortcuts import redirect, render
-from django.core.files.storage import FileSystemStorage
+
+PACKAGE_PARENT = ".."
+SCRIPT_DIR = os.path.dirname(
+    os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__)))
+)
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
+
+from nstapp.ML.nst_run import run
 
 
 def home(request):
@@ -69,15 +80,17 @@ def loginuser(request):
         else:
             login(request, user)
             return redirect("home")
+
+
 def upload(request):
     context = {}
     if request.method == "POST":
-        uploded_file =request.FILES['image']
+        uploaded_file = request.FILES["image"]
         fs = FileSystemStorage()
-        fs.save(uploded_file.name, uploded_file)
-        name = fs.save(uploded_file.name, uploded_file)
+        fs.save(uploaded_file.name, uploaded_file)
+        name = fs.save(uploaded_file.name, uploaded_file)
         url = fs.url(name)
-        context['url'] = fs.url(name)
+        context["url"] = fs.url(name)
         print(url)
-        print(uploded_file.size)
+        print(uploaded_file.size)
     return render(request, "upload.html")

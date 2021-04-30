@@ -1,7 +1,20 @@
-from nstapp.ML import *
-from nstapp.ML.img_loader import ImageLoader
-from nstapp.ML.img_unloader import Unloader
-from nstapp.ML.nst import get_input_optimizer, get_style_model_and_losses
+# from nstapp.ML import *
+# from nstapp.ML.img_loader import ImageLoader
+# from nstapp.ML.img_unloader import Unloader
+# from nstapp.ML.nst import get_input_optimizer, get_style_model_and_losses
+import os
+import sys
+
+PACKAGE_PARENT = ".."
+SCRIPT_DIR = os.path.dirname(
+    os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__)))
+)
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
+
+from ML import *
+from ML.img_loader import ImageLoader
+from ML.img_unloader import Unloader
+from ML.nst import get_input_optimizer, get_style_model_and_losses
 
 
 def run_style_transfer(
@@ -86,7 +99,7 @@ def run(contentpath, stylepath, savepath):
 
 if __name__ == "__main__":
     run(
-        "/Users/shreyasms/1.Data/2.College_new/Assignments/Sem4/WAD/Project/WAD_NST/wad_nst/nstapp/static/gallery_images/woman.jpg",
+        "/Users/shreyasms/1.Data/2.College_new/Assignments/Sem4/WAD/Project/WAD_NST/wad_nst/nstapp/static/gallery_images/panda.jpg",
         "/Users/shreyasms/1.Data/2.College_new/Assignments/Sem4/WAD/Project/WAD_NST/wad_nst/nstapp/static/gallery_images/abstract_woman.jpg",
         "/Users/shreyasms/Desktop/picture.jpg",
     )
