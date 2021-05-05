@@ -7,6 +7,9 @@ from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
 from django.db import IntegrityError
 from django.shortcuts import redirect, render
+from django.shortcuts import render, redirect
+from .models import Category, Photo
+# Create your views here.
 
 PACKAGE_PARENT = ".."
 SCRIPT_DIR = os.path.dirname(
@@ -82,6 +85,8 @@ def loginuser(request):
             return redirect("home")
 
 
+
+
 def upload(request):
     context = {}
     if request.method == "POST":
@@ -94,3 +99,31 @@ def upload(request):
         print(url)
         print(uploaded_file.size)
     return render(request, "upload.html")
+
+
+def addPhoto(request):
+    categories = Category.objects.all()
+
+    if request.method == 'POST':
+        data = request.POST
+        images = request.FILES.getlist('images')
+
+        if data['category'] != 'none':
+            category = Category.objects.get(id=data['category'])
+        elif data['category_new'] != '':
+            category, created = Category.objects.get_or_create(
+                name=data['category_new'])
+        else:
+            category = None
+
+        for image in images:
+            photo = Photo.objects.create(
+                category=category,
+                description=data['description'],
+                image=image,
+            )
+
+        return redirect('gallery')
+
+    context = {'categories': categories}
+    return render(request, 'add.html', context)
