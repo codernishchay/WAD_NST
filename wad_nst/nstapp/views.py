@@ -8,8 +8,8 @@ from django.core.files.storage import FileSystemStorage
 from django.db import IntegrityError
 from django.shortcuts import redirect, render
 from django.shortcuts import render, redirect
-from .models import Category, Photo
-# Create your views here.
+from .models import Image
+from .forms import ImageForm
 
 PACKAGE_PARENT = ".."
 SCRIPT_DIR = os.path.dirname(
@@ -101,29 +101,17 @@ def upload(request):
     return render(request, "upload.html")
 
 
-def addPhoto(request):
-    categories = Category.objects.all()
+def imageupload(request):
+    if request.method == 'GET':
+        return render(request,'imageupload.html',{'form':ImageForm()})    
+    else :
+        try :
+            form = ImageForm(request.POST,request.FILES)           # Put all the data we get from webpage 
+            newtodo = form.save()  
+            image1 = request.FILES['image1'].name 
+            print(image1)                         # Saving the value.
+            return redirect('home')
+        except ValueError :
+            return render(request,'imageupload.html',{'form':ImageForm(),'error':"Bad Data Try Again !"})
 
-    if request.method == 'POST':
-        data = request.POST
-        images = request.FILES.getlist('images')
 
-        if data['category'] != 'none':
-            category = Category.objects.get(id=data['category'])
-        elif data['category_new'] != '':
-            category, created = Category.objects.get_or_create(
-                name=data['category_new'])
-        else:
-            category = None
-
-        for image in images:
-            photo = Photo.objects.create(
-                category=category,
-                description=data['description'],
-                image=image,
-            )
-
-        return redirect('gallery')
-
-    context = {'categories': categories}
-    return render(request, 'add.html', context)

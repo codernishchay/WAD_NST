@@ -2,7 +2,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from . import views
+from nstapp import views
 
 urlpatterns = [
     path("", views.home, name="home"),
@@ -11,8 +11,7 @@ urlpatterns = [
     path("logout/", views.logoutuser, name="logoutuser"),
     path("signup/", views.signupuser, name="signupuser"),
     path("gallery/", views.gallery, name="gallery"),
-    path("upload/", views.upload, name="upload"),
-    path('add/', views.addPhoto, name='add'),
+    path('upload/',views.imageupload,name = 'imageupload'),
 ]
 
 # if settings.DEBUG:
